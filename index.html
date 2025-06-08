@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RetailVision provides smart analytics for offline stores, empowering retailers with data-driven insights to boost sales and enhance customer experiences.">
+    <meta name="keywords" content="retail analytics, smart analytics, offline retail, data-driven insights, customer insights">
+    <meta property="og:title" content="RetailVision - Smart Analytics for Offline Stores">
+    <meta property="og:description" content="Transform your retail business with real-time analytics, customer insights, and predictive modeling.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556740714-7a48a7a0c3e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+    <meta property="og:url" content="https://www.retailvision.com">
     <title>RetailVision - Smart Analytics for Offline Stores</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
@@ -328,14 +334,14 @@
             background-clip: text;
         }
 
-        .features-grid {
+        .features-grid, .pricing-grid, .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .feature-card {
+        .feature-card, .pricing-card, .testimonial-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -344,7 +350,7 @@
             border: 1px solid rgba(102, 126, 234, 0.1);
         }
 
-        .feature-card:hover {
+        .feature-card:hover, .pricing-card:hover, .testimonial-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
@@ -401,19 +407,26 @@
             transform: rotate(360deg);
         }
 
-        .job-card h3 {
+        .team-card .social-links a {
+            margin: 0 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .job-card h3, .pricing-card h3, .testimonial-card h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
             color: #333;
         }
 
-        .job-card p {
+        .job-card p, .pricing-card p, .testimonial-card p {
             font-size: 1rem;
             color: #666;
             margin-bottom: 1rem;
         }
 
-        .apply-btn {
+        .apply-btn, .pricing-btn {
             display: inline-block;
             padding: 10px 20px;
             background: linear-gradient(45deg, #667eea, #764ba2);
@@ -425,9 +438,38 @@
             transition: all 0.3s ease;
         }
 
-        .apply-btn:hover {
+        .apply-btn:hover, .pricing-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card ul li {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .pricing-card ul li::before {
+            content: '✔';
+            color: #667eea;
+            margin-right: 0.5rem;
+        }
+
+        .testimonial-card {
+            text-align: center;
+        }
+
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
         }
 
         .funding-timeline {
@@ -477,7 +519,7 @@
             border-radius: 10px;
         }
 
-        .contact-form {
+        .contact-form, .newsletter-form {
             max-width: 600px;
             margin: 0 auto;
         }
@@ -512,7 +554,7 @@
             box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
         }
 
-        .submit-btn {
+        .submit-btn, .newsletter-btn {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
             padding: 12px 30px;
@@ -526,9 +568,32 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover, .newsletter-btn:hover {
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #666;
         }
 
         .contact-section-footer {
@@ -543,6 +608,54 @@
             font-size: 1.1rem;
             color: #555;
             margin: 0.5rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -606,8 +719,13 @@
                 max-width: 80px;
             }
 
-            .jobs-grid {
+            .jobs-grid, .pricing-grid, .testimonials-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
         }
     </style>
@@ -620,6 +738,7 @@
             <ul class="nav-links">
                 <li><a href="#" onclick="showSection('home')">Home</a></li>
                 <li><a href="#" onclick="showSection('about')">About</a></li>
+                <li><a href="#" onclick="showSection('pricing')">Pricing</a></li>
                 <li><a href="#" onclick="showSection('team')">Team</a></li>
                 <li><a href="#" onclick="showSection('funding')">Funding</a></li>
                 <li><a href="#" onclick="showSection('jobs')">Jobs</a></li>
@@ -651,6 +770,31 @@
             </div>
             <div class="scroll-indicator"></div>
         </div>
+        <div class="container">
+            <div class="content-section">
+                <h2 class="section-title">Trusted by Retailers Worldwide</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <img src="https://img.freepik.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740" alt="Client Avatar">
+                        <h3>Sarita Sarangi</h3>
+                        <p><strong>Owner, Urban Boutique</strong></p>
+                        <p>"RetailVision's analytics helped us increase foot traffic by 25% through optimized store layouts."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://img.freepik.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740" alt="Client Avatar">
+                        <h3>Muneer Abbas Sheik</h3>
+                        <p><strong>Manager, CityMart</strong></p>
+                        <p>"The predictive modeling feature allowed us to reduce inventory waste by 15%."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://img.freepik.com/premium-vector/vector-flat-illustration-grayscale-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable-social-media-profiles-icons-screensavers-as-templatex9xa_719432-2210.jpg?semt=ais_hybrid&w=740" alt="Client Avatar">
+                        <h3>Eshita Nandi</h3>
+                        <p><strong>Enterprise Operations Group</strong></p>
+                        <p>"Real-time insights have transformed how we engage with customers, boosting loyalty."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -658,11 +802,12 @@
         <div class="container">
             <div class="content-section">
                 <h2 class="section-title">About RetailVision</h2>
-                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: #666;">
-                    We provide cutting-edge analytics solutions that help offline retailers understand their customers, 
-                    optimize operations, and drive growth through data-driven insights.
+                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 1rem; color: #666;">
+                    <strong>Our Mission:</strong> To empower offline retailers with actionable insights to thrive in a data-driven world.
                 </p>
-                
+                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: #666;">
+                    We provide cutting-edge analytics solutions that help retailers understand their customers, optimize operations, and drive growth through data-driven insights.
+                </p>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">📊</div>
@@ -699,6 +844,52 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="content-section">
+                <h2 class="section-title">Pricing Plans</h2>
+                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: #666;">
+                    Choose the plan that best fits your retail business needs. All plans include a 14-day free trial.
+                </p>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <p><strong>$99/month</strong></p>
+                        <ul>
+                            <li>Real-time analytics for 1 store</li>
+                            <li>Customer insights dashboard</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn" onclick="showSection('contact', event)">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Pro</h3>
+                        <p><strong>$299/month</strong></p>
+                        <ul>
+                            <li>Analytics for up to 5 stores</li>
+                            <li>Predictive modeling</li>
+                            <li>Mobile dashboard access</li>
+                            <li>Priority email & phone support</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn" onclick="showSection('contact', event)">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <p><strong>Custom Pricing</strong></p>
+                        <ul>
+                            <li>Unlimited stores</li>
+                            <li>Advanced AI features</li>
+                            <li>Dedicated account manager</li>
+                            <li>Custom integrations</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn" onclick="showSection('contact', event)">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Team Section -->
     <section id="team" class="section">
         <div class="container">
@@ -707,31 +898,46 @@
                 <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: #666;">
                     Meet the passionate individuals driving innovation in retail analytics
                 </p>
-                
                 <div class="team-grid">
                     <div class="team-card">
                         <div class="team-avatar">AM</div>
                         <h3>Aman Muruuappna</h3>
                         <p><strong>CEO & Co-Founder</strong></p>
                         <p>Former retail executive with 5+ years experience. Led digital transformation at major retail chains.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                            <a href="https://twitter.com" target="_blank">Twitter</a>
+                        </div>
                     </div>
                     <div class="team-card">
                         <div class="team-avatar">RY</div>
                         <h3>Ruchi Yadav</h3>
                         <p><strong>CTO & Co-Founder</strong></p>
                         <p>Data scientist and ML engineer.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                            <a href="https://twitter.com" target="_blank">Twitter</a>
+                        </div>
                     </div>
                     <div class="team-card">
                         <div class="team-avatar">PS</div>
                         <h3>Prakash Sanu</h3>
                         <p><strong>Head of Product</strong></p>
                         <p>Product management veteran with expertise in B2B SaaS. Former product lead at Shopify and Square.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                            <a href="https://twitter.com" target="_blank">Twitter</a>
+                        </div>
                     </div>
                     <div class="team-card">
                         <div class="team-avatar">VK</div>
                         <h3>Vikrant Kesari</h3>
                         <p><strong>VP Engineering</strong></p>
                         <p>Full-stack engineer and system architect. Built scalable analytics platforms for companies.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                            <a href="https://twitter.com" target="_blank">Twitter</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -746,23 +952,18 @@
                 <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: #666;">
                     Our journey from idea to market leader, backed by top-tier investors
                 </p>
-                
                 <div class="funding-timeline">
                     <div class="timeline-item">
-                        <!-- Uncomment the following line if you have actual images -->
-                        <!-- <img src="manipal-logo.png" alt="Manipal Ventures Logo" class="timeline-image"> -->
                         <h3>Seed Round - INR 300,000 (2023)</h3>
                         <p><strong>Lead Investor:</strong> Manipal Ventures</p>
                         <p>Initial funding to build MVP and validate product-market fit. Onboarded first 50 retail clients and achieved $5K ARR.</p>
                     </div>
                     <div class="timeline-item">
-                        <!-- <img src="iffco-logo.png" alt="Iffco Tokyo Capital Logo" class="timeline-image"> -->
                         <h3>Series A - INR 865,000 (2024)</h3>
                         <p><strong>Lead Investor:</strong> Iffco Tokyo Capital</p>
                         <p>Scaling operations and expanding to 50+ retail locations. Built enterprise-grade platform.</p>
                     </div>
                     <div class="timeline-item">
-                        <!-- <img src="season-grant-logo.png" alt="Season Grant Lv1 Logo" class="timeline-image"> -->
                         <h3>Series B - INR 250,000 (2025)</h3>
                         <p><strong>Lead Investor:</strong> Season Grant Lv1</p>
                         <p>International expansion and AI-powered features. Currently serving 20+ stores.</p>
@@ -780,7 +981,6 @@
                 <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: #666;">
                     We're looking for talented individuals to join our mission of transforming retail with smart analytics. All positions are remote.
                 </p>
-                
                 <div class="jobs-grid">
                     <div class="job-card">
                         <h3>Engineering Intern</h3>
@@ -831,7 +1031,6 @@
                 <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: #666;">
                     Ready to transform your retail business? Let's discuss how we can help you grow.
                 </p>
-                
                 <form class="contact-form" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label for="name">Full Name</label>
@@ -855,7 +1054,29 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
-                
+                <div class="faq-section">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What types of retailers can benefit from RetailVision?</h3>
+                        <p>RetailVision is designed for any offline retailer, from small boutiques to large chains, looking to leverage data for growth.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How does RetailVision ensure data privacy?</h3>
+                        <p>We comply with GDPR and CCPA, using anonymized data and secure cloud infrastructure.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I try RetailVision before committing?</h3>
+                        <p>Yes, we offer a 14-day free trial on all plans. Contact us to get started!</p>
+                    </div>
+                </div>
+                <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                    <h2 class="section-title">Stay Updated</h2>
+                    <div class="form-group">
+                        <label for="newsletter-email">Subscribe to our Newsletter</label>
+                        <input type="email" id="newsletter-email" name="newsletter-email" required placeholder="Enter your email">
+                    </div>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
                 <div class="contact-section-footer">
                     <p><strong>Email:</strong> hello@retailvision.com</p>
                     <p><strong>Phone:</strong> +1 (555) 694-4739</p>
@@ -864,6 +1085,43 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>RetailVision</h3>
+                <p>Empowering retailers with smart analytics to drive growth and enhance customer experiences.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('about')">About</a></li>
+                    <li><a href="#" onclick="showSection('pricing')">Pricing</a></li>
+                    <li><a href="#" onclick="showSection('jobs')">Jobs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RetailVision. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
@@ -887,19 +1145,21 @@
         });
 
         // Navigation functionality
-        function showSection(sectionId) {
+        function showSection(sectionId, event) {
+            if (event) event.preventDefault();
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
-            
             setTimeout(() => {
-                document.getElementById(sectionId).classList.add('active');
+                const targetSection = document.getElementById(sectionId);
+                targetSection.classList.add('active');
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
             }, 150);
-            
             window.location.hash = sectionId;
-
-            // Close mobile menu after clicking a link (only in mobile view)
             if (window.innerWidth <= 768) {
                 const navLinks = document.querySelector('.nav-links');
                 navLinks.classList.remove('active');
@@ -912,6 +1172,15 @@
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
             alert('Thank you for your interest! We\'ll get back to you within 24 hours.');
+            event.target.reset();
+        }
+
+        // Handle newsletter submission
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            alert('Thank you for subscribing to our newsletter!');
             event.target.reset();
         }
 
@@ -929,9 +1198,9 @@
             }
         });
 
-        // Smooth scrolling animation for feature cards
+        // Smooth scrolling animation for cards
         window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.feature-card, .team-card, .job-card');
+            const cards = document.querySelectorAll('.feature-card, .team-card, .job-card, .pricing-card, .testimonial-card');
             cards.forEach(card => {
                 const rect = card.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -942,7 +1211,7 @@
         });
 
         // Add interactive hover effects
-        document.querySelectorAll('.feature-card, .job-card').forEach(card => {
+        document.querySelectorAll('.feature-card, .job-card, .pricing-card, .testimonial-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-15px) scale(1.02)';
             });
