@@ -362,14 +362,14 @@
             100% { transform: scale(1); }
         }
 
-        .team-grid {
+        .team-grid, .jobs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .team-card {
+        .team-card, .job-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
@@ -378,7 +378,7 @@
             transition: all 0.3s ease;
         }
 
-        .team-card:hover {
+        .team-card:hover, .job-card:hover {
             transform: translateY(-5px);
         }
 
@@ -399,6 +399,35 @@
 
         .team-card:hover .team-avatar {
             transform: rotate(360deg);
+        }
+
+        .job-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .job-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .funding-timeline {
@@ -576,6 +605,10 @@
             .timeline-image {
                 max-width: 80px;
             }
+
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -589,6 +622,7 @@
                 <li><a href="#" onclick="showSection('about')">About</a></li>
                 <li><a href="#" onclick="showSection('team')">Team</a></li>
                 <li><a href="#" onclick="showSection('funding')">Funding</a></li>
+                <li><a href="#" onclick="showSection('jobs')">Jobs</a></li>
                 <li><a href="#" onclick="showSection('contact')">Contact</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMobileMenu()">
@@ -600,24 +634,24 @@
     </nav>
 
     <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="hero">
-                <div class="hero-content container">
-                    <h1>Transform Your Offline Store with Smart Analytics</h1>
-                    <p class="tagline">Empowering retailers with data-driven insights to boost sales and enhance customer experiences.</p>
-                    <div class="cta-buttons">
-                        <a href="#about" class="cta-button" onclick="showSection('about', event)">Learn More</a>
-                        <a href="#contact" class="cta-button secondary" onclick="showSection('contact', event)">Request a Demo</a>
-                    </div>
-                    <div class="hero-images">
-                        <img src="https://images.unsplash.com/photo-1648134859177-525771773915?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlcG9ydCUyMGluc2lnaHRzfGVufDB8fDB8fHww" alt="Retail Dashboard" class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1633307057722-a4740ba0c5d0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVwb3J0JTIwaW5zaWdodHN8ZW58MHx8MHx8fDA%3D" alt="Store Analytics" class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFzaGJvYXJkfGVufDB8fDB8fHww" alt="Customer Insights" class="hero-image">
-                    </div>
+    <section id="home" class="section active">
+        <div class="hero">
+            <div class="hero-content container">
+                <h1>Transform Your Offline Store with Smart Analytics</h1>
+                <p class="tagline">Empowering retailers with data-driven insights to boost sales and enhance customer experiences.</p>
+                <div class="cta-buttons">
+                    <a href="#about" class="cta-button" onclick="showSection('about', event)">Learn More</a>
+                    <a href="#contact" class="cta-button secondary" onclick="showSection('contact', event)">Request a Demo</a>
                 </div>
-                <div class="scroll-indicator"></div>
+                <div class="hero-images">
+                    <img src="https://images.unsplash.com/photo-1648134859177-525771773915?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlcG9ydCUyMGluc2lnaHRzfGVufDB8fDB8fHww" alt="Retail Dashboard" class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1633307057722-a4740ba0c5d0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVwb3J0JTIwaW5zaWdodHN8ZW58MHx8MHx8fDA%3D" alt="Store Analytics" class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFzaGJvYXJkfGVufDB8fDB8fHww" alt="Customer Insights" class="hero-image">
+                </div>
             </div>
-        </section>
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="section">
@@ -738,6 +772,57 @@
         </div>
     </section>
 
+    <!-- Jobs Section -->
+    <section id="jobs" class="section">
+        <div class="container">
+            <div class="content-section">
+                <h2 class="section-title">Join Our Team</h2>
+                <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: #666;">
+                    We're looking for talented individuals to join our mission of transforming retail with smart analytics. All positions are remote.
+                </p>
+                
+                <div class="jobs-grid">
+                    <div class="job-card">
+                        <h3>Engineering Intern</h3>
+                        <p><strong>Location:</strong> Remote</p>
+                        <p>Work with our engineering team to develop and test new features for our analytics platform. Ideal for students passionate about software development.</p>
+                        <a href="mailto:careers@retailvision.com?subject=Engineering%20Intern%20Application" class="apply-btn">Apply Now</a>
+                    </div>
+                    <div class="job-card">
+                        <h3>UI/UX Intern</h3>
+                        <p><strong>Location:</strong> Remote</p>
+                        <p>Collaborate with our design team to create intuitive and engaging user interfaces for our dashboard and mobile app.</p>
+                        <a href="mailto:careers@retailvision.com?subject=UI/UX%20Intern%20Application" class="apply-btn">Apply Now</a>
+                    </div>
+                    <div class="job-card">
+                        <h3>Cloud Architect</h3>
+                        <p><strong>Location:</strong> Remote</p>
+                        <p>Design and maintain scalable, secure cloud infrastructure to support our analytics platform and ensure high availability.</p>
+                        <a href="mailto:careers@retailvision.com?subject=Cloud%20Architect%20Application" class="apply-btn">Apply Now</a>
+                    </div>
+                    <div class="job-card">
+                        <h3>Data Scientist</h3>
+                        <p><strong>Location:</strong> Remote</p>
+                        <p>Develop advanced machine learning models to enhance our predictive analytics and customer insights capabilities.</p>
+                        <a href="mailto:careers@retailvision.com?subject=Data%20Scientist%20Application" class="apply-btn">Apply Now</a>
+                    </div>
+                    <div class="job-card">
+                        <h3>Product Manager</h3>
+                        <p><strong>Location:</strong> Remote</p>
+                        <p>Lead product development, define roadmaps, and work with cross-functional teams to deliver impactful features.</p>
+                        <a href="mailto:careers@retailvision.com?subject=Product%20Manager%20Application" class="apply-btn">Apply Now</a>
+                    </div>
+                    <div class="job-card">
+                        <h3>Marketing Specialist</h3>
+                        <p><strong>Location:</strong> Remote</p>
+                        <p>Drive our marketing efforts, create compelling campaigns, and build brand awareness in the retail analytics space.</p>
+                        <a href="mailto:careers@retailvision.com?subject=Marketing%20Specialist%20Application" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -846,7 +931,7 @@
 
         // Smooth scrolling animation for feature cards
         window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.feature-card, .team-card');
+            const cards = document.querySelectorAll('.feature-card, .team-card, .job-card');
             cards.forEach(card => {
                 const rect = card.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -857,7 +942,7 @@
         });
 
         // Add interactive hover effects
-        document.querySelectorAll('.feature-card').forEach(card => {
+        document.querySelectorAll('.feature-card, .job-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-15px) scale(1.02)';
             });
